@@ -29,7 +29,7 @@ curl -s https://lg.merlin.ca/ping/targets \
             --no-dns \
             ${TGTIP} \
         | awk -f parse.awk -v TGT=${TGTNAME}  \
-        | psql -q -b -h lg.merlin.ca -U pinginsert pingdata
+        | psql -q -b -h <DBHOST> -U <USERID> <DATABASE>    # fill these in
     ) &
 done 
 
